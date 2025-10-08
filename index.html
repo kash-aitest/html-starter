@@ -1,96 +1,920 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Keyword Analyzer - Optimize Your Content</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #3f37c9;
+            --success: #4cc9f0;
+            --warning: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--box-shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo i {
+            color: var(--success);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--success);
+        }
+
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+        }
+
+        .search-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+
+        .search-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 14px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .options {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .results-container {
+            margin-top: 3rem;
+            display: none;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .results-header h2 {
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+        }
+
+        .keyword-badge {
+            background: var(--primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .result-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title i {
+            color: var(--primary);
+        }
+
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+        }
+
+        .metric-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .metric-value {
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .progress {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .keywords-section {
+            margin-top: 2rem;
+        }
+
+        .keywords-section h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .keywords-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .keyword-chip {
+            background: white;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .keyword-chip:hover {
+            border-color: var(--primary);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .keyword-chip.active {
+            background-color: rgba(67, 97, 238, 0.1);
+            border-color: var(--primary);
+        }
+
+        .keyword-chip.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+        }
+
+        .keyword-text {
+            font-weight: 500;
+        }
+
+        .keyword-volume {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--primary);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1rem;
+            color: var(--success);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--success);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .section-icon {
+            color: var(--primary);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .breadcrumb-item {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-item:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb-separator {
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .search-form {
+                flex-direction: column;
+            }
+            
+            .search-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .results-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .keywords-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-search"></i>
+                <span>KeywordAnalyzer</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>SEO Keyword Analyzer</h1>
+            <p>Discover the perfect keywords to boost your search engine rankings and drive targeted traffic to your website</p>
+            
+            <div class="search-container">
+                <form class="search-form" id="keywordForm">
+                    <input type="text" class="search-input" id="keywordInput" placeholder="Enter a keyword or phrase..." required>
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                        Analyze
+                    </button>
+                </form>
+                
+                <div class="options">
+                    <div class="option">
+                        <input type="checkbox" id="includeRelated" checked>
+                        <label for="includeRelated">Include related keywords</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="includeQuestions">
+                        <label for="includeQuestions">Include questions</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="includeCompetitors">
+                        <label for="includeCompetitors">Analyze competitors</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="loading" id="loadingIndicator">
+            <div class="spinner"></div>
+            <p>Analyzing keyword data...</p>
+        </div>
+        
+        <div class="results-container" id="resultsContainer">
+            <div class="breadcrumb" id="breadcrumb">
+                <span class="breadcrumb-item" data-keyword="">Home</span>
+            </div>
+            
+            <div class="results-header">
+                <h2>Analysis Results</h2>
+                <div class="keyword-badge" id="keywordBadge">Keyword</div>
+            </div>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <i class="fas fa-chart-line"></i>
+                            Search Metrics
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Monthly Searches</span>
+                        <span class="metric-value" id="searchVolume">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Competition</span>
+                        <span class="metric-value" id="competition">-</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="competitionBar" style="width: 0%; background-color: #4cc9f0;"></div>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">CPC (USD)</span>
+                        <span class="metric-value" id="cpc">-</span>
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <i class="fas fa-trophy"></i>
+                            SEO Difficulty
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Difficulty Score</span>
+                        <span class="metric-value" id="difficulty">-</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="difficultyBar" style="width: 0%; background-color: #f72585;"></div>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Opportunity</span>
+                        <span class="metric-value" id="opportunity">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Potential</span>
+                        <span class="metric-value" id="potential">-</span>
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <i class="fas fa-globe"></i>
+                            Trend Analysis
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Trend (12 months)</span>
+                        <span class="metric-value" id="trend">-</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="trendBar" style="width: 0%; background-color: #4cc9f0;"></div>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Seasonality</span>
+                        <span class="metric-value" id="seasonality">-</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Peak Months</span>
+                        <span class="metric-value" id="peakMonths">-</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="keywords-section">
+                <h3><i class="fas fa-link section-icon"></i> Related Keywords</h3>
+                <div class="keywords-grid" id="relatedKeywordsGrid">
+                    <!-- Related keywords will be inserted here -->
+                </div>
+            </div>
+            
+            <div class="keywords-section">
+                <h3><i class="fas fa-copy section-icon"></i> Similar Keywords</h3>
+                <div class="keywords-grid" id="similarKeywordsGrid">
+                    <!-- Similar keywords will be inserted here -->
+                </div>
+            </div>
+            
+            <div class="keywords-section">
+                <h3><i class="fas fa-search-plus section-icon"></i> Search Terms</h3>
+                <div class="keywords-grid" id="searchTermsGrid">
+                    <!-- Search terms will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>KeywordAnalyzer</h3>
+                    <p>Advanced SEO keyword research tool to help you optimize your content and improve search rankings.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">Keyword Research</a></li>
+                        <li><a href="#">Competitor Analysis</a></li>
+                        <li><a href="#">Rank Tracking</a></li>
+                        <li><a href="#">Content Optimization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">SEO Guides</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Webinars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 KeywordAnalyzer. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const keywordForm = document.getElementById('keywordForm');
+            const keywordInput = document.getElementById('keywordInput');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const keywordBadge = document.getElementById('keywordBadge');
+            const breadcrumb = document.getElementById('breadcrumb');
+            
+            // Track keyword history for breadcrumb navigation
+            let keywordHistory = [];
+            
+            // Form submission handler
+            keywordForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const keyword = keywordInput.value.trim();
+                
+                if (keyword) {
+                    analyzeKeyword(keyword);
+                }
+            });
+            
+            // Function to simulate keyword analysis
+            function analyzeKeyword(keyword) {
+                // Add to history if not already there
+                if (!keywordHistory.includes(keyword)) {
+                    keywordHistory.push(keyword);
+                }
+                
+                // Show loading indicator
+                loadingIndicator.style.display = 'block';
+                resultsContainer.style.display = 'none';
+                
+                // Simulate API call delay
+                setTimeout(() => {
+                    // Generate mock data
+                    const searchData = generateMockData(keyword);
+                    
+                    // Update UI with results
+                    displayResults(searchData);
+                    
+                    // Hide loading and show results
+                    loadingIndicator.style.display = 'none';
+                    resultsContainer.style.display = 'block';
+                }, 1500);
+            }
+            
+            // Function to generate mock data
+            function generateMockData(keyword) {
+                // Generate random but realistic data
+                const searchVolume = Math.floor(Math.random() * 100000) + 100;
+                const competition = Math.floor(Math.random() * 100);
+                const cpc = (Math.random() * 10 + 0.1).toFixed(2);
+                const difficulty = Math.floor(Math.random() * 100);
+                const opportunity = ['High', 'Medium', 'Low'][Math.floor(Math.random() * 3)];
+                const potential = Math.floor(Math.random() * 100);
+                const trend = Math.floor(Math.random() * 100);
+                const seasonality = ['High', 'Medium', 'Low'][Math.floor(Math.random() * 3)];
+                const peakMonths = ['Jan, Feb, Mar', 'Apr, May, Jun', 'Jul, Aug, Sep', 'Oct, Nov, Dec'][Math.floor(Math.random() * 4)];
+                
+                // Generate related keywords
+                const relatedKeywords = [];
+                const keywordVariations = [
+                    `${keyword} tips`, `best ${keyword}`, `${keyword} guide`, 
+                    `${keyword} for beginners`, `how to ${keyword}`, `${keyword} examples`,
+                    `${keyword} vs alternatives`, `${keyword} benefits`, `${keyword} tutorial`
+                ];
+                
+                // Shuffle and pick 6-8 related keywords
+                const shuffledRelated = [...keywordVariations].sort(() => 0.5 - Math.random());
+                const selectedRelated = shuffledRelated.slice(0, Math.floor(Math.random() * 3) + 6);
+                
+                selectedRelated.forEach(kw => {
+                    relatedKeywords.push({
+                        keyword: kw,
+                        volume: Math.floor(Math.random() * 50000) + 50
+                    });
+                });
+                
+                // Generate similar keywords (synonyms and variations)
+                const similarKeywords = [];
+                const synonyms = [
+                    `${keyword} alternative`, `${keyword} substitute`, `${keyword} option`,
+                    `${keyword} solution`, `${keyword} method`, `${keyword} approach`,
+                    `${keyword} strategy`, `${keyword} technique`, `${keyword} system`
+                ];
+                
+                // Shuffle and pick 5-7 similar keywords
+                const shuffledSimilar = [...synonyms].sort(() => 0.5 - Math.random());
+                const selectedSimilar = shuffledSimilar.slice(0, Math.floor(Math.random() * 3) + 5);
+                
+                selectedSimilar.forEach(kw => {
+                    similarKeywords.push({
+                        keyword: kw,
+                        volume: Math.floor(Math.random() * 40000) + 30
+                    });
+                });
+                
+                // Generate search terms (longer phrases)
+                const searchTerms = [];
+                const searchPhrases = [
+                    `what is the best ${keyword} for`, `how to use ${keyword} effectively`,
+                    `where to buy ${keyword} online`, `${keyword} reviews and ratings`,
+                    `top 10 ${keyword} in 2023`, `why is ${keyword} important`,
+                    `${keyword} pros and cons`, `compare ${keyword} with alternatives`,
+                    `how much does ${keyword} cost`, `${keyword} installation guide`
+                ];
+                
+                // Shuffle and pick 5-7 search terms
+                const shuffledTerms = [...searchPhrases].sort(() => 0.5 - Math.random());
+                const selectedTerms = shuffledTerms.slice(0, Math.floor(Math.random() * 3) + 5);
+                
+                selectedTerms.forEach(term => {
+                    searchTerms.push({
+                        keyword: term,
+                        volume: Math.floor(Math.random() * 30000) + 20
+                    });
+                });
+                
+                return {
+                    keyword,
+                    searchVolume,
+                    competition,
+                    cpc,
+                    difficulty,
+                    opportunity,
+                    potential,
+                    trend,
+                    seasonality,
+                    peakMonths,
+                    relatedKeywords,
+                    similarKeywords,
+                    searchTerms
+                };
+            }
+            
+            // Function to display results
+            function displayResults(data) {
+                // Update keyword badge
+                keywordBadge.textContent = data.keyword;
+                
+                // Update breadcrumb
+                updateBreadcrumb(data.keyword);
+                
+                // Update search metrics
+                document.getElementById('searchVolume').textContent = data.searchVolume.toLocaleString();
+                document.getElementById('competition').textContent = `${data.competition}%`;
+                document.getElementById('competitionBar').style.width = `${data.competition}%`;
+                document.getElementById('cpc').textContent = `$${data.cpc}`;
+                
+                // Update SEO difficulty
+                document.getElementById('difficulty').textContent = `${data.difficulty}/100`;
+                document.getElementById('difficultyBar').style.width = `${data.difficulty}%`;
+                document.getElementById('opportunity').textContent = data.opportunity;
+                document.getElementById('potential').textContent = `${data.potential}%`;
+                
+                // Update trend analysis
+                document.getElementById('trend').textContent = `${data.trend > 50 ? '+' : ''}${data.trend - 50}%`;
+                document.getElementById('trendBar').style.width = `${Math.abs(data.trend - 50) * 2}%`;
+                document.getElementById('seasonality').textContent = data.seasonality;
+                document.getElementById('peakMonths').textContent = data.peakMonths;
+                
+                // Update related keywords
+                const relatedKeywordsGrid = document.getElementById('relatedKeywordsGrid');
+                relatedKeywordsGrid.innerHTML = '';
+                
+                data.relatedKeywords.forEach(kw => {
+                    const keywordChip = createKeywordChip(kw.keyword, kw.volume);
+                    relatedKeywordsGrid.appendChild(keywordChip);
+                });
+                
+                // Update similar keywords
+                const similarKeywordsGrid = document.getElementById('similarKeywordsGrid');
+                similarKeywordsGrid.innerHTML = '';
+                
+                data.similarKeywords.forEach(kw => {
+                    const keywordChip = createKeywordChip(kw.keyword, kw.volume);
+                    similarKeywordsGrid.appendChild(keywordChip);
+                });
+                
+                // Update search terms
+                const searchTermsGrid = document.getElementById('searchTermsGrid');
+                searchTermsGrid.innerHTML = '';
+                
+                data.searchTerms.forEach(term => {
+                    const keywordChip = createKeywordChip(term.keyword, term.volume);
+                    searchTermsGrid.appendChild(keywordChip);
+                });
+            }
+            
+            // Function to create a keyword chip with click functionality
+            function createKeywordChip(keyword, volume) {
+                const keywordChip = document.createElement('div');
+                keywordChip.className = 'keyword-chip';
+                
+                // Add active class if this is the current keyword
+                if (keyword === keywordInput.value) {
+                    keywordChip.classList.add('active');
+                }
+                
+                keywordChip.innerHTML = `
+                    <span class="keyword-text">${keyword}</span>
+                    <span class="keyword-volume">${volume.toLocaleString()}</span>
+                `;
+                
+                // Add click event listener
+                keywordChip.addEventListener('click', function() {
+                    // Update input field
+                    keywordInput.value = keyword;
+                    
+                    // Analyze the clicked keyword
+                    analyzeKeyword(keyword);
+                    
+                    // Scroll to top of results
+                    resultsContainer.scrollIntoView({ behavior: 'smooth' });
+                });
+                
+                return keywordChip;
+            }
+            
+            // Function to update breadcrumb navigation
+            function updateBreadcrumb(currentKeyword) {
+                breadcrumb.innerHTML = '';
+                
+                // Add Home link
+                const homeItem = document.createElement('span');
+                homeItem.className = 'breadcrumb-item';
+                homeItem.textContent = 'Home';
+                homeItem.setAttribute('data-keyword', '');
+                breadcrumb.appendChild(homeItem);
+                
+                // Add separator
+                const separator = document.createElement('span');
+                separator.className = 'breadcrumb-separator';
+                separator.textContent = '>';
+                breadcrumb.appendChild(separator);
+                
+                // Add all keywords from history except the current one
+                for (let i = 0; i < keywordHistory.length - 1; i++) {
+                    const keyword = keywordHistory[i];
+                    if (keyword !== currentKeyword) {
+                        const breadcrumbItem = document.createElement('span');
+                        breadcrumbItem.className = 'breadcrumb-item';
+                        breadcrumbItem.textContent = keyword;
+                        breadcrumbItem.setAttribute('data-keyword', keyword);
+                        breadcrumb.appendChild(breadcrumbItem);
+                        
+                        // Add separator
+                        const sep = document.createElement('span');
+                        sep.className = 'breadcrumb-separator';
+                        sep.textContent = '>';
+                        breadcrumb.appendChild(sep);
+                    }
+                }
+                
+                // Add current keyword (not clickable)
+                const currentItem = document.createElement('span');
+                currentItem.textContent = currentKeyword;
+                currentItem.style.color = 'var(--primary)';
+                currentItem.style.fontWeight = '600';
+                breadcrumb.appendChild(currentItem);
+                
+                // Add click event listeners to breadcrumb items
+                document.querySelectorAll('.breadcrumb-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const keyword = this.getAttribute('data-keyword');
+                        if (keyword !== '') {
+                            keywordInput.value = keyword;
+                            analyzeKeyword(keyword);
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
 </html>
